@@ -27,7 +27,7 @@ public class Le_207_Course_Schedule {
         }
         
         for(int i = 0; i < n; ++i){
-            if(!graph[prerequisites[i][1]].contains(prerequisites[i][0])){
+            if(!graph[prerequisites[i][1]].contains(prerequisites[i][0])){  // 必须要判断contains，防止[1,9][1,9]此类的重复出现
                 graph[prerequisites[i][1]].add(prerequisites[i][0]);
                 
                 // 这么写也可以，表示有效的前置课的情况；或者就是遍历每个结点下的每个邻居，同标准拓扑排序一样

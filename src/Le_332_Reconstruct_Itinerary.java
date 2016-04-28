@@ -31,7 +31,7 @@ public class Le_332_Reconstruct_Itinerary {
         	if(map.containsKey(tickets[i][0])){
         		map.get(tickets[i][0]).add(tickets[i][1]);
         	} else{
-        		LinkedList<String> tempList = new LinkedList<String>();
+        		LinkedList<String> tempList = new LinkedList<String>();  // 注意只有linkedlist有poll()！！！
         		tempList.add(tickets[i][1]);
         		map.put(tickets[i][0], tempList);
         	}
