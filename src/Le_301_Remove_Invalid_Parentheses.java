@@ -38,7 +38,7 @@ public class Le_301_Remove_Invalid_Parentheses {
             
             int len = tempStr.length();
             for(int i = 0; i < len; ++i){
-                char c = tempStr.charAt(i);
+                char c = tempStr.charAt(i);  // 需要剔除无效字符
                 if(c != '(' && c != ')'){
                     continue;
                 }

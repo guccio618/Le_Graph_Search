@@ -24,6 +24,10 @@ public class Le_269_Alien_Dictionary {
 		}
 		
 		for (int i = 0; i < words.length - 1; i++) {
+		    if(words[i].equals(words[i + 1])){
+                continue;
+            }
+		    
 			String cur = words[i];
 			String next = words[i + 1];
 			int length = Math.min(cur.length(), next.length());
@@ -40,7 +44,7 @@ public class Le_269_Alien_Dictionary {
 						graph[c1].add(c2);
 						degree.put(c2, degree.get(c2) + 1);
 					}
-					break;  // 找到第一个不相同的字符
+					break;   // 找到第一个不相同的字符
 				}
 			}
 		}
@@ -52,14 +56,16 @@ public class Le_269_Alien_Dictionary {
 		}
 		
 		while (!q.isEmpty()) {
-			char c = q.remove();
+			char c = q.poll();
 			result.append(c);
+			
 			if (graph[c] != null) {
 				for (char c2 : graph[c]) {
-					degree.put(c2, degree.get(c2) - 1);
-					if (degree.get(c2) == 0){
+				    int num = degree.get(c2);
+					if (num == 1){
 						q.add(c2);
 					}
+					degree.put(c2, degree.get(c2) - 1);
 				}
 			}
 		}

@@ -37,14 +37,8 @@ public class Le_332_Reconstruct_Itinerary {
         	}
         }
         
-        Iterator iter = map.entrySet().iterator();
-        while(iter.hasNext()){
-        	HashMap.Entry entry = (HashMap.Entry) iter.next();
-        	Collections.sort((List)entry.getValue(), new Comparator<String>(){
-        		public int compare(String str1, String str2){
-        			return str1.compareToIgnoreCase(str2);
-        		}
-        	});
+        for(Map.Entry<String, LinkedList<String>> entry : map.entrySet()){
+            Collections.sort(entry.getValue());
         }
         
         Stack<String> stack = new Stack<String>();

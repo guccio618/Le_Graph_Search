@@ -24,7 +24,7 @@ public class Le_133_Clone_Graph {
         Queue<UndirectedGraphNode> newQueue = new LinkedList<UndirectedGraphNode>();
         oldQueue.offer(node);
         newQueue.offer(root);
-        map.put(node.label, root);                // map表示已经建立的新图中的结点
+        map.put(node.label, root);                // map表示已经建立的新图中的结点, 有了map, 相当于visited
         
         while(!oldQueue.isEmpty()){
             UndirectedGraphNode oldNode = oldQueue.poll();

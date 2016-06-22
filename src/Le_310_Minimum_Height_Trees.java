@@ -35,8 +35,8 @@ public class Le_310_Minimum_Height_Trees {
         }
         
         while(n > 2){
-        	ArrayList<Integer> newlist = new ArrayList<Integer>();  // 此处可以用队列层序遍历，由于最后答案为list，
-            for(int next : ans){                                    // 因此用ArrayList
+        	ArrayList<Integer> newlist = new ArrayList<Integer>();  // 此处可以用队列层序遍历，由于最后答案为list，因此用ArrayList, 这里的这种用法比较nice ！！！
+            for(int next : ans){                                    
                 for(int nb : graph[next]){
                 	graph[nb].remove(next);
                 	graph[next].remove(nb);
